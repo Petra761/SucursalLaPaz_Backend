@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Sucursal_La_Paz_microservicio.Migrations
 {
     [DbContext(typeof(SucursalLP_Context))]
-    [Migration("20251114032145_v0")]
+    [Migration("20251123053711_v0")]
     partial class v0
     {
         /// <inheritdoc />
@@ -110,6 +110,65 @@ namespace Sucursal_La_Paz_microservicio.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("GastoDiarioDetalle");
+                });
+
+            modelBuilder.Entity("Sucursal_La_Paz_microservicio.Core.Entities.GerenteSucursal", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Apellido")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("apellido");
+
+                    b.Property<string>("Ci")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("ci");
+
+                    b.Property<string>("CodSucursal")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("cod_sucursal");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("email");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("estado");
+
+                    b.Property<DateOnly?>("FechaFinGerencia")
+                        .HasColumnType("date")
+                        .HasColumnName("fecha_fin_gerencia");
+
+                    b.Property<DateOnly>("FechaInicioGerencia")
+                        .HasColumnType("date")
+                        .HasColumnName("fecha_inicio_gerencia");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("nombre");
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("telefono");
+
+                    b.Property<DateTime>("UltimaActualizacion")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("ultima_actualizacion");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GerenteSucursal");
                 });
 
             modelBuilder.Entity("Sucursal_La_Paz_microservicio.Core.Entities.ReporteGastoDiario", b =>
