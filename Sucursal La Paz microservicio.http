@@ -1,0 +1,6 @@
+@Sucursal_La_Paz_microservicio_HostAddress = http://localhost:5132
+
+GET {{Sucursal_La_Paz_microservicio_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
